@@ -23,8 +23,8 @@ func (maker *JWTMaker) CreateToken(username string, duration time.Duration) (str
 		return "", err
 	}
 
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, payload)
-	return token.SignedString([]byte(maker.secretKey))
+	jwtToken := jwt.NewWithClaims(jwt.SigningMethodHS256, payload)
+	return jwtToken.SignedString([]byte(maker.secretKey))
 }
 
 // VerifyToken checks if the token is valid or not
@@ -37,12 +37,12 @@ func (maker *JWTMaker) VerifyToken(token string) (*Payload, error) {
 		return []byte(maker.secretKey), nil
 	}
 
-	parsedToken, err := jwt.ParseWithClaims(token, &Payload{}, keyFunc)
+	jwtToken, err := jwt.ParseWithClaims(token, &Payload{}, keyFunc)
 	if err != nil {
 		return nil, err
 	}
 
-	payload, ok := parsedToken.Claims.(*Payload)
+	payload, ok := jwtToken.Claims.(*Payload)
 	if !ok {
 		return nil, ErrInvalidToken
 	}
