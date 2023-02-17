@@ -7,13 +7,15 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/require"
-	
+
 	"github.com/quocdaitrn/simple-bank/util"
 )
 
 func createRandomAccount(t *testing.T) Account {
+	user := createRandomUser(t)
+
 	arg := CreateAccountParams{
-		Owner:    util.RandomOwner(),
+		Owner:    user.Username,
 		Balance:  util.RandomMoney(),
 		Currency: util.RandomCurrency(),
 	}
