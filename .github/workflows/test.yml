@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      postgresdb:
         image: postgres:12-alpine
         env:
           POSTGRES_USER: root
