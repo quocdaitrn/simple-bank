@@ -9,6 +9,8 @@ require (
 	github.com/spf13/viper v1.15.0
 	github.com/stretchr/testify v1.8.1
 	golang.org/x/crypto v0.6.0
+	google.golang.org/grpc v1.52.0
+	google.golang.org/protobuf v1.28.1
 )
 
 require (
@@ -18,6 +20,7 @@ require (
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/goccy/go-json v0.10.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mattn/go-isatty v0.0.17 // indirect
@@ -26,7 +29,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/ugorji/go/codec v1.2.9 // indirect
 	golang.org/x/net v0.7.0 // indirect
-	google.golang.org/protobuf v1.28.1 // indirect
+	google.golang.org/genproto v0.0.0-20221227171554-f9683d7f8bef // indirect
 )
 
 require (
