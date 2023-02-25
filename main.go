@@ -126,7 +126,7 @@ func runGatewayServer(config util.Config, store db.Store) {
 		log.Fatal().Err(err).Msg("cannot create listener")
 	}
 
-	log.Printf("start HTTP gateway server at %s", listener.Addr().String())
+	log.Info().Msgf("start HTTP gateway server at %s", listener.Addr().String())
 	err = http.Serve(listener, mux)
 	if err != nil {
 		log.Fatal().Err(err).Msg("cannot start HTTP gateway server")
